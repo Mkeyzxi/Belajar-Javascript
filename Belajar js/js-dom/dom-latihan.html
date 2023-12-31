@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        button {
+            width: 100px;
+            margin: 50px 20px;
+            display: block;
+        }
+        
+        input {
+            margin-bottom: 30px;
+        }
+        
+        main {
+            width: 300px;
+            margin-inline: auto;
+        }
+    </style>
+    <title>Latihan DOM</title>
+</head>
+
+<body>
+    <main>
+        <button id="btn">kirim</button>
+        <form>
+            <input type="range" name="sMerah" min="0" max="255">
+            <input type="range" name="sHijau" min="0" max="255">
+            <input type="range" name="sBiru" min="0" max="255">
+        </form>
+    </main>
+
+
+</body>
+<script>
+    const acak1 = Math.random() * 255 + 1;
+    const acak2 = Math.random() * 255 + 1;
+    const acak3 = Math.random() * 255 + 1;
+    const parent = document.body;
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", function() {
+        const acak1 = Math.random() * 255;
+        const acak2 = Math.random() * 255;
+        const acak3 = Math.random() * 255;
+        parent.style.backgroundColor = "rgba(" + acak1 + "," + acak2 + "," + acak3 + ")";
+
+    })
+
+    const sMerah = document.querySelector("input[name=sMerah]");
+    const sHijau = document.querySelector("input[name=sHijau]");
+    const sBiru = document.querySelector("input[name=sBiru]");
+    sMerah.addEventListener("change", function() {
+        const r = sMerah.value;
+        const ubahWarna = document.body.style.backgroundColor = "rgb(" + r + ",0,0)"
+
+    })
+    sHijau.addEventListener("change", function() {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const ubahWarna = document.body.style.backgroundColor = "rgb(" + r + "," + g + ",0)"
+
+    })
+    sBiru.addEventListener("change", function() {
+        const r = sMerah.value;
+        const g = sHijau.value;
+        const b = sBiru.value;
+        const ubahWarna = document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")"
+
+    })
+</script>
+
+
+</html>

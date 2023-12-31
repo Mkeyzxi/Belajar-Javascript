@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        
+        nav#nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: rgba(21, 224, 115, 1);
+            z-index: 99;
+        }
+        
+        main {
+            width: 400px;
+            height: 2000px;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        main #kotakku {
+            margin-top: 700px !important;
+            transform: translateX(200px);
+            width: 100px;
+            height: 200px;
+            opacity: 0;
+            background-color: aquamarine;
+        }
+        
+        .animasiNav {
+            background-color: rgb(71, 71, 77)!important;
+        }
+        
+        .animasiKot {
+            transform: translateX(300px) !important;
+            transition: all .7s ease-out;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <p>hello</p>
+    </nav>
+    <main>
+        <div id="kotakku"></div>
+    </main>
+
+    <!-- <script>
+        const nav = document.getElementById("nav");
+        const kotak = document.getElementById("kotakku");
+
+
+        window.addEventListener("scroll", function() {
+            const scroll = parseInt(window.scrollY);
+            console.log(scroll);
+
+            if (scroll >= 134 && scroll <= 400) {
+                kotak.setAttribute("class", "animasiKot");
+                body.append(kotak)
+            } else if (scroll >= 134 && scroll <= 400) {
+                nav.setAttribute("class", "animasiNav");
+                body.append(nav)
+            }
+        })
+    </script> -->
+
+    <script>
+        const body = document.body; // tambahkan ini
+        const nav = document.getElementById("nav");
+        const kotak = document.getElementById("kotakku");
+
+        window.addEventListener("scroll", function() {
+            const scroll = parseInt(window.scrollY);
+            const maxScrol = Math.max(scroll);
+            console.log(maxScrol);
+            console.log(scroll);
+
+            if (scroll >= 13 && scroll <= maxScrol) {
+                kotak.setAttribute("class", "animasiKot");
+                document.append(kotak);
+            } else {
+                kotak.removeAttribute("class", "animasiKot"); // hapus class animasiKot jika scroll tidak dalam rentang yang diinginkan
+            }
+
+            if (scroll >= 13 && scroll <= maxScrol) {
+                nav.setAttribute("class", "animasiNav");
+                body.append(nav);
+            } else {
+                nav.removeAttribute("class"); // hapus class animasiNav jika scroll tidak dalam rentang yang diinginkan
+            }
+        });
+    </script>
+
+</body>
+
+</html>

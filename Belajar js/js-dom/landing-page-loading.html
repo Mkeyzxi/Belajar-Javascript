@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .landing-page {
+            width: 100%;
+            height: 100vh;
+            background: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+        
+        .landing-page.animate {
+            animation: fadeIn .5s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        /*\ body, */
+        /* html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        } */
+        /* .landing-page { */
+        /* width: 100%; */
+        /* height: 100vh; */
+        /* background: #3498db; */
+        /* display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; */
+        /* Menyembunyikan konten yang melewati batas container */
+        /* } */
+        /* Tambahkan animasi dengan durasi 5 detik dan transformasi translateX */
+        /* .landing-page.animate {
+            animation: slideRightToLeft 5s linear infinite;
+        } */
+        /* @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(100%);
+                /* Mulai dari kanan */
+        /* } */
+        /* 100% { */
+        /* transform: translateX(-100%); */
+        /* Selesai di kiri */
+        /* } */
+        /* } */
+    </style>
+</head>
+
+<body>
+    <div class="landing-page">
+        <!-- Konten halaman landing di sini -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Menambahkan kelas 'animate' setelah halaman dimuat
+            document.querySelector('.landing-page').classList.add('animate');
+        });
+    </script>
+</body>
+
+</html>

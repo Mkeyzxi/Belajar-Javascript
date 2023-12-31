@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom html</title>
+</head>
+
+<body>
+    <button id="btn" onclick="diklik()" onmouseover="masuk()" onmouseout="keluar()" style="width: 200px; height: 90px; margin-left: 45%; margin-top: 20%;">button 1</button>
+    <script>
+        const parent = document.body
+        const btn = document.getElementById("btn")
+        const text1 = document.getElementById("button 1")
+        const text2 = document.createTextNode("button 2")
+        const elementBaru = document.createElement('p')
+
+
+        function masuk() {
+            elementBaru.append(text1)
+            parent.append(elementBaru)
+        }
+
+        function keluar() {
+            elementBaru.append(text2)
+            parent.append(elementBaru)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .landing-page {
+            width: 100%;
+            height: 100vh;
+            background: #3498db;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            /* Menyembunyikan konten yang melewati batas container */
+        }
+        /* Style tambahan jika diperlukan */
+        
+        .landing-content {
+            color: #fff;
+            font-size: 24px;
+        }
+    </style>
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <div class="landing-page">
+        <!-- Konten halaman landing di sini -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const landingPage = document.querySelector('.landing-page');
+            const landingContent = document.createElement('div');
+            landingContent.classList.add('landing-content');
+            landingContent.textContent = 'Selamat datang di website kami!';
+
+            landingPage.appendChild(landingContent);
+
+            // Animasi gerakan dari kanan ke kiri menggunakan JavaScript
+            function animateRightToLeft() {
+                let currentPosition = window.innerWidth;
+
+                function move() {
+                    currentPosition--;
+                    landingContent.style.transform = `translateX(${currentPosition}px)`;
+
+                    if (currentPosition <= -landingContent.clientWidth) {
+                        currentPosition = window.innerWidth;
+                    }
+
+                    requestAnimationFrame(move);
+                }
+
+                move();
+            }
+
+            // Panggil animasi ketika halaman dimuat
+            animateRightToLeft();
+        });
+    </script>
+</body>
+
+</html>

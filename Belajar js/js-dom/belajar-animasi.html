@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+        
+        nav {
+            width: 100%;
+            height: 50px;
+            background-color: aqua;
+            position: fixed;
+            top: 0;
+        }
+        
+        .animasi {
+            box-shadow: 5px 5px 5px 5px #000;
+            background-color: rebeccapurple;
+        }
+        
+        .animasiBox {
+            transform: translateX(10px);
+            transition: all 4s ease-out linear;
+        }
+        
+        .kotak1 {
+            width: 200px;
+            height: 200px;
+            margin: 400px auto;
+        }
+        
+        .kotak2 {
+            width: 200px;
+            height: 200px;
+            margin: 400px auto;
+        }
+        
+        .kotak3 {
+            width: 200px;
+            height: 200px;
+            margin: 400px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navigasi">
+        <h1>hello word</h1>
+
+    </nav>
+    <main id="konten" style="background-color: #aac;padding: 200px;">
+
+        <div style="background-color: rgb(255, 3, 129);" class="kotak1"></div>
+        <div style="background-color: #D10;" class="kotak2"></div>
+        <div style="background-color: #fe2;" class="kotak3"></div>
+    </main>
+    <script>
+        const nav = document.getElementById("navigasi");
+        const main = document.getElementById("konten");
+        const isiMain1 = main.getElementsByClassName('kotak1');
+        const isiMain2 = main.getElementsByClassName('kotak2');
+        const isiMain3 = main.getElementsByByClassName('kotak3');
+
+        window.addEventListener("scroll", () => {
+            // const scrolValue = parseInt(window.scrollHeight - window.clientHeight);
+            const scrolValue1 = parseInt(window.scrollY);
+
+            // console.log(scrolValue);
+            console.log(scrolValue1)
+            if (scrolValue1 > 50) {
+                nav.setAttribute("class", "animasi");
+                nav.textContent = "hello mbul";
+                document.appendChild(nav);
+            } else if (scrolValue1 >= 182) {
+                isiMain1.setAttribute("class", "animasiBox");
+                nav.append(isiMain1);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

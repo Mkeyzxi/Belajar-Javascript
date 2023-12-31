@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Selection</title>
+    <style>
+        * {
+            border: 2px solid #dedede;
+            padding: 15px;
+            margin: 15px;
+        }
+        
+        html {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            max-width: 600px;
+            margin: 30px auto;
+            font-family: sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="judul">Hello World</h1>
+    <div id="container">
+        <section id="a">
+            <p class="p1">paragraf 1</p>
+            <a href="http://instagram.com/sandhikagalih">Instagram Sandhika Galih</a>
+            <p class="p2">paragraf 2</p>
+            <p class="p3">paragraf 3</p>
+        </section>
+        <section id="b">
+            <p>paragraf 4</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // manipulasi node (dom manipulation) 
+        // document.createElement() -> buatkan element
+        // document.createTextNode() -> buatkan text pada node
+        // node.appendChild()  -> simpan keakhir element parent
+        // node.insertBefore() ->  simpan sebelum element apa, 2 parameter
+        // parentNode.removeChild() 
+        // parentNode.replaceChild() 
+        // ...
+
+        // buat element baru
+        const pBaru = document.createElement("p");
+        const text = document.createTextNode("paragraf mbul_ganteng");
+        // simpan tulisan kedalam paragraf
+        pBaru.appendChild(text);
+        // mencari section A untuk paragraf
+        const sectionA = document.querySelector("section#a");
+        // menggabungkan paragraph A dengan pBaru
+        sectionA.appendChild(pBaru);
+
+        // membuat li baru urutan kedua.
+        const liBaru = document.createElement("li");
+        const textLi = document.createTextNode("item mbul_ganteng");
+        liBaru.appendChild(textLi);
+        const ul = document.querySelector("section#b ul");
+        const li = ul.querySelector("li:nth-child(2)")
+        ul.insertBefore(liBaru, li)
+
+        // menangkap parent yang sdh ada
+        const link = document.getElementsByTagName("a")[0];
+        sectionA.removeChild(link);
+
+        // mereplace node baru
+        const parentB = document.getElementById('b');
+        const p4 = parentB.querySelector('p');
+        const h2 = document.createElement('h2');
+        const isiH2 = document.createTextNode('Parent B');
+        h2.appendChild(isiH2);
+        parentB.replaceChild(h2, p4)
+
+
+        // latihan mengganti paragraf 1
+        const p1 = sectionA.querySelector('p');
+        const pganti = document.createElement('p');
+        const p1isi = document.createTextNode('paragraf pengganti');
+        pganti.appendChild(p1isi);
+        sectionA.replaceChild(pganti, p1)
+
+        // latihan menambahkan item mbul sebelum item 3 menggunakan function baru
+        const li3 = parentB.querySelectorAll('li')[2];
+        const liTambah = parentB.createElement('li');
+        const liText = parentB.createTextNode('item mantap');
+        sectionB.append(liTambah);
+        sectionB.replaceChild(liTambah)
+    </script>
+</body>
+
+</html>
+
+</html>

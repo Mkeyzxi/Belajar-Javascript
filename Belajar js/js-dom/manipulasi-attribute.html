@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Dom Selection</title>
+        <style>
+            * {
+                border: 2px solid #dedede;
+                padding: 15px;
+                margin: 15px;
+            }
+            
+            html {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                max-width: 600px;
+                margin: 30px auto;
+                font-family: sans-serif;
+                color: #333;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1 id="judul" class="mbul">Hello World</h1>
+        <div id="container">
+            <section id="a">
+                <p class="p1">paragraf 1</p>
+                <a href="http://instagram.com/sandhikagalih">Instagram Sandhika Galih</a>
+                <p class="p2">paragraf 2</p>
+                <p class="p3">paragraf 3</p>
+            </section>
+            <section id="b">
+                <p>paragraf 4</p>
+                <ul>
+                    <li>item 1</li>
+                    <li>item 2</li>
+                    <li>item 3</li>
+                </ul>
+            </section>
+        </div>
+
+        <script>
+            // //querys selector -> element
+            // const a = document.querySelector("a");
+            // a.style.color = "red";
+            // const li2 = document.querySelector("section#b ul li:nth-child(2)")
+            // li2.style.backgroundColor = "yellow";
+            // // query selector all -> nodelist -> mengambil semua tag p yang ada
+            // const p = document.querySelectorAll("p");
+            // for (let i = 0; i < p.length; i++) {
+            //     p[i].innerHTML = "paragraf from mbul";
+            // }
+
+            // mengambil dengan merubah node root
+            // const sectionb = document.getElementById("b");
+            // const p = sectionb.getElementsByTagName("p");
+            // p[0].style.color = "yellow";
+
+            // manipulasi element
+            const h3 = document.getElementById("judul");
+            h3.innerHTML = "hellow mbul";
+            h3.style.color = "yellow";
+
+            const h1 = document.getElementById("judul");
+            const a = document.querySelector("section#a a");
+            h1.get.Atribute("class")
+            h1.set.Atribute("id", "judul");
+            h1.remove.Atribute("id")
+
+            // manipulasi kelas
+            a.classList //mengetahui class apa saja note->mbul itu nama kelas
+            a.classList.add("mbul") // menambahkan class baru
+            a.classList.remove("mbul") // menghilangkan class yang didefinisikan
+            a.classList.toggle("mbul") // menambahkan jika tak ada, menghilangkan jika ada
+            a.classList.item(1) // mengetahui class yang ada dikelas berapa berdasarkan index default 0
+            a.classList.contains("mbul") // mengetahui elemnt punya tidak kelas tertentu 
+            a.classList.replace("mbul", "bulganteng") // mengganti kelas yang ada dengan kelas yang baru
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>

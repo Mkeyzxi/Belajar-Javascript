@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: auto;
+            background-color: red;
+        }
+        
+        nav#nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 70px;
+            background-color: rgba(21, 224, 115, 1);
+            z-index: 99;
+            transition: background-color 0.5s;
+            /* Tambahkan animasi perubahan warna */
+        }
+        
+        main {
+            width: 400px;
+            height: 2000px;
+            background-color: rgb(255, 255, 255);
+        }
+        
+        main #kotakku {
+            margin-top: 700px !important;
+            transform: translateX(200px);
+            width: 100px;
+            height: 200px;
+            opacity: 0;
+            background-color: aquamarine;
+            transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+            /* Tambahkan animasi untuk transform dan opacity */
+        }
+        
+        .animasiNav {
+            background-color: rgb(71, 71, 77) !important;
+        }
+        
+        .animasiKot {
+            transform: translateX(300px);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <p>hello</p>
+    </nav>
+    <main>
+        <div id="kotakku"></div>
+    </main>
+
+    <script>
+        const body = document.body;
+        const nav = document.getElementById("nav");
+        const kotak = document.getElementById("kotakku");
+
+        window.addEventListener("scroll", function() {
+            const scroll = parseInt(window.scrollY);
+
+            if (scroll >= 13 && scroll <= 400) {
+                kotak.classList.add("animasiKot");
+            } else {
+                kotak.classList.remove("animasiKot");
+            }
+
+            if (scroll >= 401) {
+                nav.classList.add("animasiNav");
+            } else {
+                nav.classList.remove("animasiNav");
+            }
+        });
+    </script>
+</body>
+
+</html>

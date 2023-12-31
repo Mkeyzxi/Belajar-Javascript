@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 50px;
+            background-color: red;
+            z-index: 9;
+        }
+        
+        main {
+            background-color: rgb(105, 93, 78);
+            height: 2000px;
+            width: 100%;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .kotak {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            margin: 200px 100px;
+        }
+        
+        .satu {
+            transform: translateX(-100px);
+            opacity: 1;
+        }
+        
+        .dua {
+            transform: translateX(100px);
+            opacity: 1;
+        }
+        
+        .animasiKiri {
+            transform: translateX(100px) !important;
+            transition: all 1s ease-in;
+            opacity: 1 !important;
+        }
+        
+        .animasiKanan {
+            transform: translateX(-100px) !important;
+            transition: all 1s ease-in;
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <p>hello word</p>
+    </nav>
+    <main id="main">
+        <div class="kotak satu"></div>
+        <div class="kotak dua"></div>
+    </main>
+    <script>
+        const nav = document.getElementById('nav');
+        const main = document.getElementById('main');
+        const satu = main.querySelector('.satu');
+        const dua = main.querySelector('.dua');
+
+        window.addEventListener('scroll', () => {
+            const scroll = parseInt(window.scrollY);
+
+            const scrollMax = Math.max(scroll);
+            if (scroll > 12 && scroll <= 100) {
+                satu.setAttribute('class', 'animasiKiri')
+                dua.setAttribute('class', 'animasiKanan')
+                satu.style.backgroundColor = 'red';
+                body.append(satu)
+                body.append(dua)
+            } else {
+                satu.removeAttribute('class', 'animasiKiri')
+                dua.removeAttribute('class', 'animasiKanan')
+            }
+        })
+    </script>
+</body>
+
+</html>
