@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js js js</title>
+</head>
+
+<body>
+
+    <script>
+        // merubah array isi menjadi kosong seperti dibawah
+        // var iniArray = ['saya', 'kamu', 'kita', 'mereka', 'bersama']
+        // iniArray[2] = undefined;
+        // console.log(iniArray.join());
+
+        // join di array
+        // console.log(iniArray.join('-')); //join bisa tidak memiliki parameter namun jika ada berrti sbgai pemisah saja
+
+        // var iniArray = ['saya', 'kamu', 'kita', 'mereka', 'bersama']
+        // push & pop pada array
+        // iniArray.push(); // memasukkan data dibagian akhir
+        // iniArray.push('dia'); // memasukkan data dibagian akhir
+        // iniArray.push('dia', 'kamu'); // memasukkan data dibagian akhir push bisa langsung dua bahkan lebih
+        // iniArray.pop(); // menghapus data pada index terakhir dan hanya bisa memanggil satu/satu
+
+        // unshift dan shift pada array
+        // iniArray.unshift('mereka'); // menambahkan data diawal
+        // iniArray.shift(); // menghapus data diawal -> menghapus kata mereka yang ditambahkan diawal
+
+
+        // var iniArray = ['saya', 'kamu', 'kita', 'mereka', 'bersama']
+        // 4. splice // menambahkan element tergantung dengan index dan menghapus juga berdasarkan index
+        // splice (indexAwal,mauDihapusDerapa,elmentBaru1,elmentBaru2,..) 
+        // iniArray.splice(3, 0, 'mbul ganteng')
+        // console.log(iniArray.join());
+        // iniArray.splice(3, 2, 'mbul ganteng')
+        // console.log(iniArray.join());
+
+        //5. slice // mengambil element berdasarkan index awal dan index akhir sbgai pemotong atau tidak diambil lagi
+        // slice (awal,akhir) // note : harus di dimasukkan kedalam variabel
+        // var arrayku = iniArray.slice(1, 3)
+        // console.log(iniArray.join());
+        // console.log(iniArray.slice(1, 3).join());
+
+
+
+        // var angka = [15, 31, 2, 4, 51, 5, 77, 23, 64, 21, 10];
+        // versi biasa
+        // for (var i = 0; i < angka.length; i++) {
+        //     console.log(angka[i]);
+        // }
+        // versi mantap foreach
+
+        // angka.forEach((e) => { // satu parameter berarti hanya mengambil element dari angka
+        //     console.log(e)
+        // })
+        // mahasiswa = ['mbul', 'makbul', 'mkeyzxi', 'ganteng'];
+        // mahasiswa.forEach((e, i) => { // dua parameter yaitu element dan index
+        //     console.log(e + " mahasiswa index ke" + (i + 1))
+        // })
+
+        // mahasiswa.forEach((e, i, j) => { // tiga parameter yaitu element dan index serta element semuanya
+        //     console.log(e + " mahasiswa index ke" + i + j)
+        // })
+
+        // Map pada js
+        // map berbeda dengan foreach namun hampir sama, map mengembalikan array sedangkan foreigh nggk, contohnya map bisa return foreigh nggk
+        var angka = [1, 2, 4, 5, 6, 4, 3, 5, 2, 4]
+            // var angka2 = angka.map(function(e) {
+            //     return e * 2;
+            // })
+            // console.log(angka2.join())
+            // sort berguna untuk mengurutkan nilai pada array
+        console.log(angka.join())
+            // penuslisan bisa gini
+        angka.sort()
+        console.log(angka.join())
+            // console.log((angka.sort()).join()) // kalau mau satu perintah
+
+        // terjadi kendala jika sort memilki variabel seperti dibawah
+        // var angka2 = [1, 2, 3, 10, 4, 6, 20, 40, 4, 50, 9, 8];
+        // console.log(angka2.join());
+
+        // console.log((angka2.sort()).join());
+        // //maka harus seperti ini
+        // angka2.sort((a, b) => {
+        //     return a - b; // parameter a dan b merupakan element 1 dan 2 yang akan dibandingkan jika negatif hasinya maka diangggap a lebih kecil dari b, sdngkan jika positif maka diaangp a lbih besar dari b
+        // })
+        // console.log(angka2.join())
+
+        // filter dan find, find mengembalikan 1 nilai sdngkan filter mngmblikan bisa banyak nilai, untuk mencari element pada array
+        var angka2 = [1, 2, 3, 10, 4, 5, 6, 20, 40, 4, 50, 9, 8];
+        // filter mencari nilai pada array dan mengembalikan dalam bentuk array
+        var angka3 = angka2.filter(function(x) {
+            // return x === 4;
+            // return x === 400;
+            return x > 20;
+        })
+
+        console.log(angka3.join())
+
+        var angka3 = angka2.find(function(x) {
+            // return x === 4;
+            // return x === 400;
+            return x > 20; // hanya 1 yang tampil karena join hanya angka pertama yang muncul saja
+        })
+
+        console.log(angka3) // tidak pakai join karena join hanya untuk array sdngkan find tidak mengmblikan dlm bntuk array
+    </script>
+</body>
+
+</html>
