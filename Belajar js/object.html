@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ini adalah object di javascript</title>
+</head>
+
+<body>
+
+
+    <script>
+        var mahasiswa = {
+            nama: 'Muhammad Makbul N',
+            nim: '60200122070',
+            semester: 12,
+            cetak: function() {
+                return "halo nama saya " + this.nama + " dan nim saya" + this.nim + " serta saya semester " + this.semester;
+            },
+            ip: [12, 32, 12, 4, 53, 12, 4],
+            alamat: {
+                kecamatan: 'mamuju',
+                kabupaten: 'mamuju',
+                jl: 'pangeran mbuLL',
+                semua: function() {
+                    return `kecamatan ${this.kecamatan} | kabupaten ${this.kabupaten} | jl ${this.jl}`;
+                }
+            }
+
+        }
+
+        // cara panggil program diatas
+        mahasiswa.nama
+        mahasiswa.nim
+        mahasiswa.semester
+        mahasiswa.cetak()
+        mahasiswa.ip[2]
+        mahasiswa.alamat.kecamatan
+        mahasiswa.alamat.kabupaten
+        mahasiswa.alamat.jl
+        mahasiswa.alamat.semua()
+    </script>
+</body>
+
+</html>
