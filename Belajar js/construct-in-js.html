@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // constructor
+        // function Mahasiswa(nama, nim, semester, kelas) {
+        //     this.nama = nama;
+        //     this.nim = nim;
+        //     this.semester = semester;
+        //     this.kelas = kelas;
+        // }
+
+        // var mahasiswa = new Mahasiswa('mbul', '60200222070', '3To4', 'D');
+        // mahasiswa.nama = 'Muhammad Makbul N';
+        // mahasiswa.nim = '60200122070';
+
+        // cara penulisan objet
+        // 1. fucntion deklaration
+
+        // function halo() {
+        //     console.log(this); // mengembalikan scope global yaitu window
+        //     console.log('halo');
+        // }
+        // halo();
+
+        // // 2. object literal
+        // var obj = {};
+        // obj.halo = function() {
+        //     console.log(this); // mengembalikan objek obj keselurusan
+        //     console.log('halo');
+        // }
+        // obj.halo();
+
+        // 3. constructor
+        function Halo() {
+            console.log(this); // mengembalikan object yang baru dibuat
+            console.log('halo');
+        }
+        new Halo();
+    </script>
+</body>
+
+</html>
