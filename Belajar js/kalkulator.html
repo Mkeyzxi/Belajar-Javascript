@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator | mkeyzxi</title>
+    <link rel="stylesheet" href="kalkulator.css">
+</head>
+
+<body>
+    <main>
+        <input type="text" id="tampilan" class="kalkulator">
+        <button id="satu" class="kalkulator" onclick="appendToDisplay('1')">1</button>
+        <button id="dua" class="kalkulator" onclick="appendToDisplay('2')">2</button>
+        <button id="tiga" class="kalkulator" onclick="appendToDisplay('3')">3</button>
+        <button id="empat" class="kalkulator" onclick="appendToDisplay('+')">+</button>
+        <button id="lima" class="kalkulator" onclick="appendToDisplay('4')">4</button>
+        <button id="enam" class="kalkulator" onclick="appendToDisplay('5')">5</button>
+        <button id="tujuh" class="kalkulator" onclick="appendToDisplay('6')">6</button>
+        <button id="delapan" class="kalkulator" onclick="appendToDisplay('-')">-</button>
+        <button id="sembilan" class="kalkulator" onclick="appendToDisplay('7')">7</button>
+        <button id="sepuluh" class="kalkulator" onclick="appendToDisplay('8')">8</button>
+        <button id="sebelah" class="kalkulator" onclick="appendToDisplay('9')">9</button>
+        <button id="duabelas" class="kalkulator" onclick="appendToDisplay('*')">*</button>
+        <button id="tigabelas" class="kalkulator" onclick="clearDisplay()">C</button>
+        <button id="empatbelas" class="kalkulator" onclick="appendToDisplay('0')">0</button>
+        <button id="limabelas" class="kalkulator" onclick="calculate()">=</button>
+        <button id="enambelas" class="kalkulator" onclick="appendToDisplay('/')">/</button>
+    </main>
+    <script src="kalkulator.js"></script>
+</body>
+
+</html>
