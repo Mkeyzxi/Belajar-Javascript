@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM Traversal</title>
+    <style>
+        body {
+            margin: 50px;
+            font-family: arial;
+            background-color: #666;
+        }
+        
+        .container {
+            width: 900px;
+            margin: auto;
+        }
+        
+        .card {
+            display: inline-block;
+            width: 220px;
+            padding: 0 80px;
+            height: 80px;
+            font-size: 16px;
+            line-height: 80px;
+            border-radius: 40px;
+            background-color: #f1f1f1;
+            margin: 20px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .card img {
+            float: left;
+            margin: 0 10px 0 -80px;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .card .nama,
+        .card .telp {
+            display: block;
+            line-height: 20px;
+            padding: 0 5px;
+        }
+        
+        .card .nama {
+            margin-left: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        
+        .card .telp {
+            margin-left: 20px;
+            margin-top: 5px;
+            font-size: 16px;
+            color: #aaa;
+        }
+        
+        .card .close {
+            font-size: 24px;
+            font-weight: bold;
+            color: #999;
+            position: absolute;
+            top: 0;
+            right: 30px;
+            cursor: pointer;
+        }
+        
+        .card:hover .close {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+            <img src="img/sandhika.jpeg" width="96" height="96">
+            <span class="nama">Galih</span>
+            <span class="telp">08123456789</span>
+            <span class="close">x</span>
+        </div>
+        <div class="card">
+            <img src="img/sandhika.jpeg" width="96" height="96">
+            <span class="nama">Sandhika</span>
+            <span class="telp">08123456789</span>
+            <span class="close">x</span>
+        </div>
+        <div class="card">
+            <img src="img/sandhika.jpeg" width="96" height="96">
+            <span class="nama">hikalih</span>
+            <span class="telp">08123456789</span>
+            <span class="close">x</span>
+        </div>
+        <div class="card">
+            <img src="img/sandhika.jpeg" width="96" height="96">
+            <span class="nama">Silih</span>
+            <span class="telp">08123456789</span>
+            <span class="close">x</span>
+        </div>
+
+    </div>
+
+    <script>
+        // document.querySelector('span.close').addEventListener('click', function() {
+        //     document.querySelector('div.card').style.display = 'none';
+        // })
+
+        // tidak menggunakan dom traversal
+        // const close = document.querySelectorAll('.close');
+        // for (var i = 0; i < close.length; i++) {
+        //     const card = document.querySelectorAll('.card')[i];
+        //     close[i].addEventListener('click', function() {
+        //         card.style.display = 'none';
+        //     });
+        // }
+
+        // menggunakan dom traversal
+        const close = document.querySelectorAll('.close');
+        // menggunakan for
+        // for (let i = 0; i < close.length; i++) {
+        //     close[i].addEventListener('click', (e) => {
+        //         // close[i].parentElement.style.display = 'none'; // cara 1 tpi masih kurang efektif (hapus parameternya)
+        //         e.target.parentElement.style.display = 'none'; // cara 2 sudah efektif karena kita mengetahui apa saja yang ditarget
+        //     });
+        // }
+        // menggunakan forEach
+        close.forEach(function(el) { // el bertujuan untuk mengambil elemenya
+            el.addEventListener('click', (e) => {
+                e.target.parentElement.style.display = 'none';
+            })
+        })
+    </script>
+</body>
+
+</html>
