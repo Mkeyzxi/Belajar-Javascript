@@ -18,3 +18,10 @@ setTimeout(() => { // tiga
     console.log('dua') // ketiga muncul dikarenakan ada delay 2000 detik baru ditampilkan sedangkan yang lain dijalakn setlh setTimeout sdh dieksekusi
 }, 2000)
 console.log('tiga') // dua
+
+
+// setTimeout(() => {
+//     window.alert('indonesia')
+// }, 5000)
+
+// bisa lihat alurnya di web : http://latentflip.com/loupe/
