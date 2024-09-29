@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let ditepati = false;
+        // const janji1 = new Promise((resolve, reject) => {
+        //     if(ditepati){
+        //         resolve('Ditepati')
+        //     }else{
+        //         reject('Ingkar')
+        //     }
+        // })
+
+        // bagian 1
+        // janji1
+        //     .then(response => console.log('OK : ' + response))
+        //     .catch(response => console.log('NO : ' + response))
+
+        // let janji = false;
+
+        // let promise = new Promise((resolve, reject) => {
+        //     if(janji){
+        //         resolve('ditepati')
+        //     }else{
+        //         reject('ingkari')
+        //     }
+        // });
+
+        // promise
+        // .finally(() => console.log('selesai'))
+
+        //     .then(peringatan => console.log(peringatan))
+        //     .catch(peringatan => console.log(peringatan))
+
+
+        // bagian 2
+        // let janji2 = true;
+        // const promise2 = new Promise((resolve, reject) => {
+        //     if(janji2){
+        //         setTimeout(() => {
+        //             resolve('janji ditepati');
+        //         }, 2000);
+        //     }else {
+        //         setTimeout(() => {
+        //             reject('janji diingkari')
+        //         }, 2000)
+        //     }
+        // })
+        // console.log('mulai')
+        // promise2
+        //     .finally(() => console.log('telah selesai'))
+        //     .then(response => console.log('OK!' + response))
+        //     .catch(response => console.log('NO!' + response));
+        // console.log('selesai')
+
+
+        // bagian 3
+        // Promise ALL
+        const film = new Promise(resolve => {
+            setTimeout(()=> {
+                resolve([
+                    {
+                        nama: 'MbuL ganteng Idaman',
+                        tayang: 'Bioskop',
+                        durasi: 290,
+                    }
+                ])
+            }, 1500)
+        })
+
+        const buku = new Promise(resolve => {
+            setTimeout(()=> {
+                resolve([
+                    {
+                        judul: 'siganteng mbul',
+                        berada: 'perpustakaan',
+                        halaman: 90,
+                    }
+                ])
+            }, 1000)
+        })
+
+        Promise.all([film,buku])
+            .then(response => {
+                const [film, buku] = response;
+                console.log(film[0].nama)
+                console.log(buku)
+            })
+
+    </script>
+</body>
+</html>
