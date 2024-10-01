@@ -1,0 +1,11 @@
+JSDoc : bantuan cara melakukan comment 
+Flow, Type Check Library : mengecek apakah inputan sudah sesuai dengan tipe data variabel
+TypeScript : pengembangan lanjutan JS, supersheet JS
+Style Guide : 
+Elint, StandardJS, dan JSHint : membuat kode kita lebih terkelola, meningkatkan kualitas kode bisa di install dan dicek errornya diterminal
+Melakukan uji test dengan test pyramid : https://martinfowler.com/bliki/TestPyramid.html
+Node JS dan Bun JS memlilki pengujian otomatis di module bawaan
+
+pengujian Ingat! Testing otomatis dapat membuat kita terhindar dari kebiasaan pengujian manual: jalankan program → saksikan hasil → perbaiki kode jika hasil aneh. Oke, mari kita sama-sama langsung ke materi berikutnya untuk belajar implementasi testing dalam aplikasi JavaScript.
+
+note js modul : test, assert penulisan import assert from 'node:assert'; dan import { test } from 'node:test';
